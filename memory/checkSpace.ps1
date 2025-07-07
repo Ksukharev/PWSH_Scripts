@@ -5,9 +5,9 @@ $documents = (Get-ChildItem C:\Users\$env:USERNAME\Documents -force -Recurse -Er
 $desktop = (Get-ChildItem C:\Users\$env:USERNAME\Desktop -force -Recurse -ErrorAction SilentlyContinue| measure Length -sum).sum / 1Gb
 
 # Outputs in console information 
-Write-Host ("Загрузки: ", $downloads) 
-Write-Host ("Документы: ", $documents) 
-Write-Host ("Рабочий стол: ", $desktop) 
+Write-Host ("Downloads: ", $downloads) 
+Write-Host ("Documents: ", $documents) 
+Write-Host ("Desktop: ", $desktop) 
 
 
 # Do not lets close the window 
