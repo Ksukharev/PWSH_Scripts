@@ -3,8 +3,8 @@ Write-Host "System directories" -ForegroundColor yellow
 Write-Host 
 
 
-#Checking space in userDirection
-#Gets infogrmation form C:\Users\userName\Downloads
+#Checking space in userDirections
+#Gets infogrmation form C:\Users\userName\
 Write-Host "--- User direct files ---"
 $downloads = (Get-ChildItem C:\Users\$env:USERNAME\Downloads -force -Recurse -ErrorAction SilentlyContinue| measure Length -sum).sum / 1Gb
 $documents = (Get-ChildItem C:\Users\$env:USERNAME\Documents -force -Recurse -ErrorAction SilentlyContinue| measure Length -sum).sum / 1Gb

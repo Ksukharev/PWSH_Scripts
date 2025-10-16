@@ -1,0 +1,24 @@
+﻿
+if((Test-Path -LiteralPath "HKLM:\SOFTWARE\Classes\.zip") -ne $true) {  New-Item "HKLM:\SOFTWARE\Classes\.zip" -force -ea SilentlyContinue };
+if((Test-Path -LiteralPath "HKLM:\SOFTWARE\Classes\.zip\CompressedFolder") -ne $true) {  New-Item "HKLM:\SOFTWARE\Classes\.zip\CompressedFolder" -force -ea SilentlyContinue };
+if((Test-Path -LiteralPath "HKLM:\SOFTWARE\Classes\.zip\CompressedFolder\ShellNew") -ne $true) {  New-Item "HKLM:\SOFTWARE\Classes\.zip\CompressedFolder\ShellNew" -force -ea SilentlyContinue };
+if((Test-Path -LiteralPath "HKLM:\SOFTWARE\Classes\.zip\OpenWithProgids") -ne $true) {  New-Item "HKLM:\SOFTWARE\Classes\.zip\OpenWithProgids" -force -ea SilentlyContinue };
+if((Test-Path -LiteralPath "HKLM:\SOFTWARE\Classes\.zip\PersistentHandler") -ne $true) {  New-Item "HKLM:\SOFTWARE\Classes\.zip\PersistentHandler" -force -ea SilentlyContinue };
+if((Test-Path -LiteralPath "HKLM:\SOFTWARE\Classes\7-Zip.zip") -ne $true) {  New-Item "HKLM:\SOFTWARE\Classes\7-Zip.zip" -force -ea SilentlyContinue };
+if((Test-Path -LiteralPath "HKLM:\SOFTWARE\Classes\7-Zip.zip\DefaultIcon") -ne $true) {  New-Item "HKLM:\SOFTWARE\Classes\7-Zip.zip\DefaultIcon" -force -ea SilentlyContinue };
+if((Test-Path -LiteralPath "HKLM:\SOFTWARE\Classes\7-Zip.zip\shell") -ne $true) {  New-Item "HKLM:\SOFTWARE\Classes\7-Zip.zip\shell" -force -ea SilentlyContinue };
+if((Test-Path -LiteralPath "HKLM:\SOFTWARE\Classes\7-Zip.zip\shell\open") -ne $true) {  New-Item "HKLM:\SOFTWARE\Classes\7-Zip.zip\shell\open" -force -ea SilentlyContinue };
+if((Test-Path -LiteralPath "HKLM:\SOFTWARE\Classes\7-Zip.zip\shell\open\command") -ne $true) {  New-Item "HKLM:\SOFTWARE\Classes\7-Zip.zip\shell\open\command" -force -ea SilentlyContinue };
+New-ItemProperty -LiteralPath 'HKLM:\SOFTWARE\Classes\.zip' -Name '(default)' -Value '7-Zip.zip' -PropertyType String -Force -ea SilentlyContinue;
+New-ItemProperty -LiteralPath 'HKLM:\SOFTWARE\Classes\.zip' -Name 'Content Type' -Value 'application/x-zip-compressed' -PropertyType String -Force -ea SilentlyContinue;
+New-ItemProperty -LiteralPath 'HKLM:\SOFTWARE\Classes\.zip' -Name 'DontCompressInPackage' -Value '' -PropertyType String -Force -ea SilentlyContinue;
+New-ItemProperty -LiteralPath 'HKLM:\SOFTWARE\Classes\.zip' -Name 'PerceivedType' -Value 'compressed' -PropertyType String -Force -ea SilentlyContinue;
+New-ItemProperty -LiteralPath 'HKLM:\SOFTWARE\Classes\.zip\CompressedFolder\ShellNew' -Name 'Data' -Value ([byte[]](0x50,0x4b,0x05,0x06,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00)) -PropertyType Binary -Force -ea SilentlyContinue;
+New-ItemProperty -LiteralPath 'HKLM:\SOFTWARE\Classes\.zip\CompressedFolder\ShellNew' -Name 'ItemName' -Value '@%SystemRoot%\system32\zipfldr.dll,-10194' -PropertyType ExpandString -Force -ea SilentlyContinue;
+New-ItemProperty -LiteralPath 'HKLM:\SOFTWARE\Classes\.zip\OpenWithProgids' -Name 'CompressedFolder' -Value '' -PropertyType String -Force -ea SilentlyContinue;
+New-ItemProperty -LiteralPath 'HKLM:\SOFTWARE\Classes\.zip\PersistentHandler' -Name '(default)' -Value '{098f2470-bae0-11cd-b579-08002b30bfeb}' -PropertyType String -Force -ea SilentlyContinue;
+New-ItemProperty -LiteralPath 'HKLM:\SOFTWARE\Classes\7-Zip.zip' -Name '(default)' -Value 'zip Archive' -PropertyType String -Force -ea SilentlyContinue;
+New-ItemProperty -LiteralPath 'HKLM:\SOFTWARE\Classes\7-Zip.zip\DefaultIcon' -Name '(default)' -Value 'C:\Program Files\7-Zip\7z.dll,1' -PropertyType String -Force -ea SilentlyContinue;
+New-ItemProperty -LiteralPath 'HKLM:\SOFTWARE\Classes\7-Zip.zip\shell' -Name '(default)' -Value '' -PropertyType String -Force -ea SilentlyContinue;
+New-ItemProperty -LiteralPath 'HKLM:\SOFTWARE\Classes\7-Zip.zip\shell\open' -Name '(default)' -Value '' -PropertyType String -Force -ea SilentlyContinue;
+New-ItemProperty -LiteralPath 'HKLM:\SOFTWARE\Classes\7-Zip.zip\shell\open\command' -Name '(default)' -Value '"C:\Program Files\7-Zip\7zFM.exe"' -PropertyType String -Force -ea SilentlyContinue;
