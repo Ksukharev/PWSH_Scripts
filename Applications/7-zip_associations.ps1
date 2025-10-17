@@ -19,7 +19,7 @@ if((Test-Path -LiteralPath "HKLM:\SOFTWARE\Classes\.rar") -ne $true) {  New-Item
 if((Test-Path -LiteralPath "HKLM:\SOFTWARE\Classes\.rar\OpenWithProgids") -ne $true) {  New-Item "HKLM:\SOFTWARE\Classes\.rar\OpenWithProgids" -force -ea SilentlyContinue };
 if((Test-Path -LiteralPath "HKLM:\SOFTWARE\Classes\.rar\PersistentHandler") -ne $true) {  New-Item "HKLM:\SOFTWARE\Classes\.rar\PersistentHandler" -force -ea SilentlyContinue };
 
-# Создаем классы для 7-Zip
+# Create classes for 7-Zip
 if((Test-Path -LiteralPath "HKLM:\SOFTWARE\Classes\7-Zip.tgz") -ne $true) {  New-Item "HKLM:\SOFTWARE\Classes\7-Zip.tgz" -force -ea SilentlyContinue };
 if((Test-Path -LiteralPath "HKLM:\SOFTWARE\Classes\7-Zip.tgz\DefaultIcon") -ne $true) {  New-Item "HKLM:\SOFTWARE\Classes\7-Zip.tgz\DefaultIcon" -force -ea SilentlyContinue };
 if((Test-Path -LiteralPath "HKLM:\SOFTWARE\Classes\7-Zip.tgz\shell") -ne $true) {  New-Item "HKLM:\SOFTWARE\Classes\7-Zip.tgz\shell" -force -ea SilentlyContinue };
@@ -56,7 +56,7 @@ if((Test-Path -LiteralPath "HKLM:\SOFTWARE\Classes\7-Zip.rar\shell") -ne $true) 
 if((Test-Path -LiteralPath "HKLM:\SOFTWARE\Classes\7-Zip.rar\shell\open") -ne $true) {  New-Item "HKLM:\SOFTWARE\Classes\7-Zip.rar\shell\open" -force -ea SilentlyContinue };
 if((Test-Path -LiteralPath "HKLM:\SOFTWARE\Classes\7-Zip.rar\shell\open\command") -ne $true) {  New-Item "HKLM:\SOFTWARE\Classes\7-Zip.rar\shell\open\command" -force -ea SilentlyContinue };
 
-# Настройка ассоциаций для расширений
+# Assosioations setup
 New-ItemProperty -LiteralPath 'HKLM:\SOFTWARE\Classes\.tgz' -Name '(default)' -Value '7-Zip.tgz' -PropertyType String -Force -ea SilentlyContinue;
 New-ItemProperty -LiteralPath 'HKLM:\SOFTWARE\Classes\.tgz' -Name 'PerceivedType' -Value 'compressed' -PropertyType String -Force -ea SilentlyContinue;
 New-ItemProperty -LiteralPath 'HKLM:\SOFTWARE\Classes\.tgz' -Name 'Content Type' -Value 'application/x-compressed' -PropertyType String -Force -ea SilentlyContinue;
@@ -95,7 +95,7 @@ New-ItemProperty -LiteralPath 'HKLM:\SOFTWARE\Classes\.rar' -Name 'PerceivedType
 New-ItemProperty -LiteralPath 'HKLM:\SOFTWARE\Classes\.rar\OpenWithProgids' -Name '7-Zip.rar' -Value '' -PropertyType String -Force -ea SilentlyContinue;
 New-ItemProperty -LiteralPath 'HKLM:\SOFTWARE\Classes\.rar\PersistentHandler' -Name '(default)' -Value '{098f2470-bae0-11cd-b579-08002b30bfeb}' -PropertyType String -Force -ea SilentlyContinue;
 
-# Настройка классов 7-Zip
+# Classes setup
 New-ItemProperty -LiteralPath 'HKLM:\SOFTWARE\Classes\7-Zip.tgz' -Name '(default)' -Value 'TGZ Archive' -PropertyType String -Force -ea SilentlyContinue;
 New-ItemProperty -LiteralPath 'HKLM:\SOFTWARE\Classes\7-Zip.tgz\DefaultIcon' -Name '(default)' -Value 'C:\Program Files\7-Zip\7z.dll,8' -PropertyType String -Force -ea SilentlyContinue;
 New-ItemProperty -LiteralPath 'HKLM:\SOFTWARE\Classes\7-Zip.tgz\shell\open\command' -Name '(default)' -Value '"C:\Program Files\7-Zip\7zFM.exe" "%1"' -PropertyType String -Force -ea SilentlyContinue;
