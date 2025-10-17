@@ -1,8 +1,10 @@
-Install-Module -Name Microsoft.Graph.DeviceManagement.Actions -Force  -AllowClobber
+Set-ExecutionPolicy RemoteSigned
+
+<# Install-Module -Name Microsoft.Graph.DeviceManagement.Actions -Force  -AllowClobber
 Install-Module -Name Microsoft.Graph.DeviceManagement -Force -AllowClobber #>
 
 # Importing the SDK Module
-Import-Module -Name Microsoft.Graph.DeviceManagement.Actions
+#Import-Module -Name Microsoft.Graph.DeviceManagement.Actions
 
 Connect-MgGraph -scope DeviceManagementManagedDevices.PrivilegedOperations.All, DeviceManagementManagedDevices.ReadWrite.All,DeviceManagementManagedDevices.Read.All
 
