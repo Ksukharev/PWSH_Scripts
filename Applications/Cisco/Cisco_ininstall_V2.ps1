@@ -57,3 +57,7 @@ foreach ($product in $ciscoProducts) {
 
 Write-Host "Operation completed."
  
+
+
+
+

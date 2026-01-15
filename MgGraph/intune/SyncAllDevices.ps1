@@ -1,5 +1,3 @@
-Set-ExecutionPolicy RemoteSigned
-
 <# Install-Module -Name Microsoft.Graph.DeviceManagement.Actions -Force  -AllowClobber
 Install-Module -Name Microsoft.Graph.DeviceManagement -Force -AllowClobber #>
 
@@ -23,7 +21,6 @@ $Devices = Get-MgDeviceManagementManagedDevice -All
 
 Foreach ($Device in $Devices)
 {
-
 
 Sync-MgDeviceManagementManagedDevice -ManagedDeviceId $Device.Id
 
