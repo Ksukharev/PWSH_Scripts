@@ -1,5 +1,5 @@
-# Получение всех данных о пользователе  
-Get-ADUser -Identity "sc13435" -Properties *
+# All User info  
+Get-ADUser -Identity "" -Properties *
 
-# Список всех пользователей из Департамента
+# all users from department
 Get-ADUser -Filter 'Department -eq "IT Services Division"' | Select-Object Name, Surname 

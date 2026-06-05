@@ -7,7 +7,7 @@ Install-Module -Name Microsoft.Graph.DeviceManagement -Force -AllowClobber #>
 Connect-MgGraph -scope DeviceManagementManagedDevices.PrivilegedOperations.All, DeviceManagementManagedDevices.ReadWrite.All,DeviceManagementManagedDevices.Read.All
 
 #### Gets All devices
-$Devices = Get-MgDeviceManagementManagedDevice -All
+#$Devices = Get-MgDeviceManagementManagedDevice -All
 
 #### Gets all Windows devices
 #$Devices = Get-MgDeviceManagementManagedDevice -Filter "contains(operatingsystem,'Windows')" -All
@@ -16,7 +16,7 @@ $Devices = Get-MgDeviceManagementManagedDevice -All
 #$Devices = Get-MgDeviceManagementManagedDevice -Filter "contains(operatingsystem,'Android')" -All
 
 #### Gets all iOS devices
-#$Devices = Get-MgDeviceManagementManagedDevice -Filter "contains(operatingsystem,'ios')" -All
+$Devices = Get-MgDeviceManagementManagedDevice -Filter "contains(operatingsystem,'ios')" -All
 
 
 Foreach ($Device in $Devices)

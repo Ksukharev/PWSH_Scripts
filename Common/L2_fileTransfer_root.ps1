@@ -1,6 +1,5 @@
-# ПЕРЕМЕЩЕНИЕ ФАЙЛОВ В КОРЕНЬ "*.inf", "*.cat", "*.sys", "*.dll"
-# Путь к корневой папке (измените под себя)
-$RootPath = "C:\Your\Root\Folder"
+
+$RootPath = "C:\Path"
  
 # Проверяем, что папка существует
 if (-not (Test-Path -Path $RootPath -PathType Container)) {
@@ -14,6 +13,7 @@ $Extensions = @("*.inf", "*.cat", "*.sys", "*.dll")
 foreach ($ext in $Extensions) {
    Get-ChildItem -Path $RootPath -Filter $ext -File -Recurse -ErrorAction SilentlyContinue |
        Move-Item -Destination $RootPath -Force -ErrorAction Continue
+       Write-Host "$ext - Перемещен"
 }
 
     Get-ChildItem -Path $RootPath -Filter $ext -File -Recurse -ErrorAction SilentlyContinue |
